@@ -37,4 +37,16 @@ public class EmployeService {
         return e1.getSalary().compareTo(e2.getSalary());
     }
 
+    public static int sortByAgeThenName(Employee e1,Employee e2)
+    {
+        int result=e1.getAge().compareTo(e2.getAge());
+        if(result==0)
+        {
+            return e1.getFullName().compareTo(e2.getFullName());
+        }
+        else{
+            return result;
+        }
+    }
+
 }

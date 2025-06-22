@@ -17,6 +17,8 @@ public class Main {
             System.out.println("5. Sort by Department");
             System.out.println("6. Sort by Salary");
             System.out.println("7. Sort by Employee ID");
+             System.out.println("8. Sort by Age then Full Name ");
+        
             System.out.println("Enter your choice:");
 
             int option = sc.nextInt();
@@ -74,6 +76,10 @@ public class Main {
 
                 case 7:
                     Collections.sort(EmployeService.employes, EmployeService::SortById);
+                    EmployeService.getAllEmployees();
+                    break;
+                    case 8:
+                    Collections.sort(EmployeService.employes,EmployeService::sortByAgeThenName);
                     EmployeService.getAllEmployees();
                     break;
 
