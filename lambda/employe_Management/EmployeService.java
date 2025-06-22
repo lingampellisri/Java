@@ -49,4 +49,15 @@ public class EmployeService {
         }
     }
 
+
+    /**
+     * import java.util.Comparator;
+
+        Collections.sort(EmployeService.employes, 
+            Comparator.comparing(Employee::getAge)
+                    .thenComparing(Employee::getFullName)
+        );
+     * 
+     */
+
 }
