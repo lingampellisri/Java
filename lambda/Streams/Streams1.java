@@ -22,8 +22,8 @@ public class Streams1 {
                 .flatMap(List::stream)
                 .filter(s->s.startsWith("S"))
                 .map(String::toUpperCase)
-                .distinct()
                 .sorted()
+                .distinct()
                 .peek(s->intermediate.add(s))
                 .collect(Collectors.toList());
 
