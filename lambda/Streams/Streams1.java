@@ -1,45 +1,57 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.*;
 
-public class Streams1 {
- 
-    
-    public static void main(String[] args) {
+class test1 {
+  public static void main(String args[]){
+    List<String> list = Arrays.asList("a1", "a2", "b1", "c2", "camel", "c1");
 
-              List<List<String>> listOfLists = Arrays.asList(
-            Arrays.asList("Reflection", "Collection", "Stream"),
-            Arrays.asList("Structure", "State", "Flow"),
-            Arrays.asList("Sorting", "Mapping", "Reduction", "Stream")
-        );
+    Stream<String> fromList =  list.stream();    
+    fromList
+		.filter(s -> s.startsWith("c"))
+		.peek(System.out::println)
+		.map(String::toUpperCase)
+		.peek(System.out::println)
+		.sorted()
+		.forEach(System.out::println);
 
-        Set<String>intermediate=new HashSet<>();
-
-
-        List<String>result= listOfLists.stream()
-                .flatMap(List::stream)
-                .filter(s->s.startsWith("S"))
-                .map(String::toUpperCase)
-                .sorted()
-                .distinct()
-                .peek(s->intermediate.add(s))
-                .collect(Collectors.toList());
-
-                System.out.println("===============Intermediate Results=================");
-
-                intermediate.forEach(System.out::println);
-
-            System.out.println("=============Final Results===============");
-
-            result.forEach(s->System.out.println(s));
-
-                
-                
-
-        
-        
-    }
-
+    System.out.println(list);
+  }
 }
+
+class test2 {
+  public static void main(String args[]){
+    Stream.of("d2", "a2", "b1", "b3", "c")
+        .filter(s -> {
+            System.out.println("filter: " + s);
+            return true;}).forEach(s -> System.out.println("forEach: " + s));
+  }
+}
+
+
+
+
+class test3 {
+  public static void main(String args[]){
+    Stream<String> empty = Stream.empty();
+    empty.forEach(System.out::println);
+
+    Stream<Integer> singleElement = Stream.of(1);
+    singleElement.forEach(System.out::println);
+
+    Stream<Integer> fromArray = Stream.of(2, 3, 4);
+    fromArray.forEach(System.out::println);
+  }
+}
+
+class test4 {
+  public static void main(String args[]){
+    List<String> list = Arrays.asList("A", "B", "C", "D", "E");
+    Stream<String> fromList = list.stream();
+    fromList.forEach(System.out::println);
+
+    Stream<String> fromListParallel = list.parallelStream();
+    fromListParallel.forEach(System.out::println);
+  }
+}
+
