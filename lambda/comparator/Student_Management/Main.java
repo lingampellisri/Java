@@ -11,8 +11,8 @@ public class Main {
         List<Student> students = new ArrayList<>();
 
         students.add(new Student(101, "Anil Kumar", 15, "CSE", "NIT Warangal"));
-        students.add(new Student(102, "Bhavya Reddy", 5, "ECE", "IIIT Hyderabad"));
-        students.add(new Student(103, "Charan Teja", 12, "EEE", "BITS Pilani"));
+        students.add(new Student(102, "Anil Kumar", 5, "ACE", "IIIT Hyderabad"));
+        students.add(new Student(103, "Anil Teja", 12, "EEE", "BITS Pilani"));
         students.add(new Student(104, "Deepika Sharma", 7, "CSE", "IIT Bombay"));
         students.add(new Student(105, "Eshwar Rao", 20, "ME", "IIT Madras"));
         students.add(new Student(106, "Farhana Sheikh", 3, "CSE", "IIT Delhi"));
@@ -21,7 +21,7 @@ public class Main {
         students.add(new Student(109, "Indu Priya", 1, "CSE", "IIT Bombay"));
         students.add(new Student(110, "Jayant Verma", 11, "ECE", "BITS Goa"));
 
-        
+
           System.out.println("==================Welcome to Student Management==================");
         System.out.println(students);
 
@@ -39,6 +39,17 @@ public class Main {
              System.out.println("==================Sort by Branch==================");
              Collections.sort(students,new StudentSortByBranch());
              System.out.println(students);
+
+            System.out.println("==================Sort by College==================");
+             Collections.sort(students,new StudentSortByClg());
+             System.out.println(students);
+
+              System.out.println("==================Sort by FullName and Branch==================");
+             Collections.sort(students,new SortByNameAndBranch());
+             System.out.println(students);
+
+
+             
 
 
 
