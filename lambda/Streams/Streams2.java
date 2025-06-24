@@ -39,6 +39,17 @@ public class Streams2 {
             Optional<String> s=names.stream().findFirst();
             s.ifPresent(System.out::println);
 
+            System.out.println("===============All match ============");
+            boolean allStartWithS=names.stream().allMatch(n->n.startsWith("S"));
+            System.out.println(allStartWithS);
+
+            
+            System.out.println("===============Any match ============");
+            boolean anyStartWithS=names.stream().anyMatch(n->n.startsWith("S"));
+            System.out.println(anyStartWithS);
+
+            
+
     }
     
 }
