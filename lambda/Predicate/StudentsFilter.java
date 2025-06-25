@@ -40,6 +40,14 @@ public class StudentsFilter {
                 .filter(startsWithSri.and(endsWithA))
                 .forEach(System.out::println);
 
+
+                 System.out.println("===================Students With Start is Sri Or End is a==================");
+
+        Students.stream()
+                .filter(startsWithSri.or(endsWithA))
+                .forEach(System.out::println);
+
+
     }
 
 }
