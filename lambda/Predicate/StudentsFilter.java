@@ -20,30 +20,25 @@ public class StudentsFilter {
         Students.add("Laxmi");
         Students.add("Vinay");
 
-        Predicate<String>startsWithSri=name->name.startsWith("Sri");
-        Predicate<String>endsWithA=name->name.endsWith("a");
+        Predicate<String> startsWithSri = name -> name.startsWith("Sri");
+        Predicate<String> endsWithA = name -> name.endsWith("a");
 
         // boolean result=startsWithSri.and(endsWithA).test(
-        //   "Sri Krishna"
+        // "Sri Krishna"
         // );
 
         // System.out.println(result);
-System.out.println("================Student with Sri Filtered================");
+        System.out.println("================Student with Sri Filtered================");
 
         Students.stream()
-        .filter(startsWithSri)
-        .forEach(System.out::println);
-
+                .filter(startsWithSri)
+                .forEach(System.out::println);
 
         System.out.println("===================Students With Start is Sri and End is a==================");
 
         Students.stream()
-        .filter(startsWithSri.and(endsWithA))
-        .forEach(System.out::println);
-
-
-
-
+                .filter(startsWithSri.and(endsWithA))
+                .forEach(System.out::println);
 
     }
 
